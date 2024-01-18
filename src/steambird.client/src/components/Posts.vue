@@ -1,16 +1,15 @@
 <template>
     <div class="post-component">
         <div v-if="loading" class="loading">
-                Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
+                Carregando...
         </div>
 
         <div v-if="post" class="content">
             <div v-for="p in post" :key="p.id" class="post">
                 <span>{{ getDate(p.createdAt) }}</span>
-            <a :href="`${getShortDate(p.createdAt)}/${p.slug}`"><h1>{{ p.title }}</h1></a>
+            <h1><a :href="`${getShortDate(p.createdAt)}/${p.slug}`">{{ p.title }}</a></h1>
                 
-                <p></p>
-                <p>{{ p.content }}</p>
+                <div v-html="p.content"></div>
             </div>        
         </div>
     </div>

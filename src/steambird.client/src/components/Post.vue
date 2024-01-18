@@ -2,14 +2,14 @@
     <div class="post-component">
         <div v-if="loading" class="loading">
                 {{ $route.params.date }}
-                Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
+                Carregando...
         </div>
 
         <div v-if="post" class="content">
             <span>{{ getDate(post.createdAt) }}</span>
             <h1>{{ post.title }}</h1>
                 
-            <p>{{ post.content }}</p>
+            <div v-html="post.content"></div>
         </div>
     </div>
 </template>

@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Milkshake\cache\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>8.*-*</Version>
@@ -31,6 +35,27 @@
     </ProjectReference>
     <ProjectReference Include="..\Steambird.ImageGeneration\Steambird.ImageGeneration.csproj" />
     <ProjectReference Include="..\Steambird.Logging\Steambird.Logging.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Milkshake\source\ay que bestera.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Milkshake\source\Fiat Uno.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Milkshake\source\Internet Explorer.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Milkshake\template\Nasce uma lenda.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Milkshake\template\perdeu tudo.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Milkshake\template\Seu Madruga.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

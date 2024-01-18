@@ -22,19 +22,33 @@ public class AppDbContext : DbContext
             new Post
             {
                 Id = 1,
-                Title = "Lorem ipsum dolor sit amet",
-                Slug = "lorem-ipsum",
-                CreatedAt = new DateTime(2024, 01, 16, 23, 59, 0),
-                Content = """
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere porttitor enim, eget hendrerit massa auctor et. Etiam aliquet nulla tempor magna pulvinar dictum. Nam sodales purus consectetur, mollis metus in, dapibus ante. Praesent dignissim eu velit in vestibulum. Nulla ultrices consectetur nulla vel posuere. Fusce vestibulum faucibus nibh nec ullamcorper. Vestibulum imperdiet nisi nunc. Vestibulum id felis et turpis facilisis sagittis. Vivamus vestibulum nec elit ac imperdiet. Suspendisse eu congue lacus. Quisque elementum ante leo, non gravida mi luctus sed. Suspendisse potenti. Mauris quis diam vitae purus sodales consectetur.
-                          
-                          Vivamus placerat commodo nibh sed accumsan. Pellentesque sed sodales dolor. Donec at sem in diam posuere condimentum sit amet sit amet metus. In finibus egestas nibh. Nullam facilisis semper eleifend. Nam metus odio, faucibus ac mattis vitae, ornare sed tellus. Nam mattis rutrum leo non pellentesque. Nam et odio non sapien semper finibus et ac turpis. Sed euismod iaculis leo, ac ornare augue sodales a. Suspendisse potenti. Pellentesque a consequat sapien, sit amet luctus nibh.
-                          
-                          Maecenas finibus porttitor sapien, sit amet venenatis sem placerat quis. Cras at sagittis dui. Etiam tempor turpis vel tortor molestie, id egestas orci condimentum. Cras vitae venenatis urna. Nam id malesuada dui. Suspendisse condimentum scelerisque nibh, sit amet feugiat diam porta tristique. Nam ornare nibh felis, vitae varius nisl vulputate ac. Donec et quam eu nisi elementum ultricies. Etiam quis feugiat nisi, accumsan condimentum diam. Mauris sed sapien lacinia, sagittis enim at, sodales metus. Proin consequat magna ligula, sed vehicula eros aliquet eget. 
-                          """
-            }, new Post
+                Title = "Milkshake.NET",
+                Slug = "milkshake-net",
+                CreatedAt = new DateTime(2024, 01, 15, 23, 59, 0),
+                Content = "<p>Meu maior projeto até o momento. É possível usar ele neste site, <a href=\"/milkshake\">clicando aqui</a>.</p> <p><a href=\"https://github.com/nyetii/Milkshake.NET\">Repositório no GitHub</a></p>"
+
+            },
+            new Post
             {
                 Id = 2,
+                Title = "OpenGate",
+                Slug = "open-gate",
+                CreatedAt = new DateTime(2024, 01, 16, 23, 59, 0),
+                Content = "<p>Este foi um pequeno projeto feito com meu amigo para conhecer LDAP e a Web API.</p> <p><a href=\"https://github.com/nyetii/OpenGate/tree/master\">Repositório no GitHub</a></p>"
+                          
+            },
+            new Post
+            {
+                Id = 3,
+                Title = "Selc",
+                Slug = "selc",
+                CreatedAt = new DateTime(2024, 01, 17, 23, 59, 0),
+                Content = "<p>Utilizando a linguagem Swift, este foi um projeto em grupo durante uma extensão da faculdade no qual fizemos um aplicativo para iOS sobre o clima. Neste aplicativo, haviam coisas comuns como a previsão do tempo e notícias, porém o maior diferencial dele era a sua integração com um sensor de temperatura, pressão e umidade em Arduino, podendo salvar medições do mesmo.</p> <p><a href=\"https://drive.google.com/file/d/1NdpBSpMVHD8Z4t5gEmz9pg-uqvzy0HqJ/view?usp=sharing\">Arquivo .zip do Projeto</a></p>"
+
+            },
+            new Post
+            {
+                Id = 4,
                 Title = "Bem-vindo ao meu blog!",
                 Slug = "bem-vindo",
                 CreatedAt = new DateTime(2024, 01, 18, 7, 30, 0),
@@ -47,40 +61,146 @@ public class AppDbContext : DbContext
             new Template()
             {
                 Id = Guid.Parse("ee7dbb6e-2ea8-4f25-8654-1a32a1a35aac"),
-                Name = "test",
-                Description = "Test",
-                Path = @"C:\Users\Netty\Desktop\Repos\Steambird\src\Steambird.Server\Milkshake\template\test.webp",
+                Name = "Nasce uma lenda",
+                Description = "E morre outra",
+                Path = @"C:\Users\Netty\Desktop\Repos\Steambird\src\Steambird.Server\Milkshake\template\Nasce uma lenda.webp",
+                Tags = 0,
+                Width = 554,
+                Height = 484
+            },
+            new Template()
+            {
+                Id = Guid.Parse("ba062a8b-d601-4eff-875c-803c752a5ab5"),
+                Name = "Perdeu tudo",
+                Description = "Morando de aluguel",
+                Path = @"C:\Users\Netty\Desktop\Repos\Steambird\src\Steambird.Server\Milkshake\template\perdeu tudo.webp",
                 Tags = 0,
                 Width = 1024,
-                Height = 755
+                Height = 576
+            },
+            new Template()
+            {
+                Id = Guid.Parse("fab466dd-3e09-4d66-8873-1d62a6840d88"),
+                Name = "Seu Madruga",
+                Description = "Se olhando no espelho",
+                Path = @"C:\Users\Netty\Desktop\Repos\Steambird\src\Steambird.Server\Milkshake\template\Seu Madruga.webp",
+                Tags = 0,
+                Width = 360,
+                Height = 278
             });
 
         modelBuilder.Entity<Topping>().HasData(
             new Topping()
             {
                 Id = Guid.NewGuid(),
-                Name = "test",
-                Description = "test",
-                Width = 400,
-                Height = 400,
+                Name = "personagem1",
+                Description = "",
+                Width = 554,
+                Height = 205,
                 X = 0,
-                Y = 0,
+                Y = 50,
                 Tags = ImageTags.Any,
-                Layer = Layer.Foreground,
+                Layer = Layer.Background,
                 IsText = false,
                 TemplateId = Guid.Parse("ee7dbb6e-2ea8-4f25-8654-1a32a1a35aac"),
+                Index = 1
+            },
+            new Topping()
+            {
+                Id = Guid.NewGuid(),
+                Name = "personagem2",
+                Description = "",
+                Width = 554,
+                Height = 205,
+                X = 0,
+                Y = 5289,
+                Tags = ImageTags.Any,
+                Layer = Layer.Background,
+                IsText = false,
+                TemplateId = Guid.Parse("ee7dbb6e-2ea8-4f25-8654-1a32a1a35aac"),
+                Index = 2
+            },
+
+            new Topping()
+            {
+                Id = Guid.NewGuid(),
+                Name = "personagem",
+                Description = "",
+                Width = 424,
+                Height = 53,
+                X = 491,
+                Y = 77,
+                Tags = ImageTags.Any,
+                Layer = Layer.Foreground,
+                IsText = true,
+                Font = "Calibri",
+                Color = "Black",
+                TemplateId = Guid.Parse("ba062a8b-d601-4eff-875c-803c752a5ab5"),
+                Index = 1
+            },
+            new Topping()
+            {
+                Id = Guid.NewGuid(),
+                Name = "personagem",
+                Description = "",
+                Width = 518,
+                Height = 446,
+                X = 0,
+                Y = 130,
+                Tags = ImageTags.Any,
+                Layer = Layer.Background,
+                IsText = false,
+                Font = "Calibri",
+                Color = "Black",
+                TemplateId = Guid.Parse("ba062a8b-d601-4eff-875c-803c752a5ab5"),
+                Index = 1
+            },
+
+            new Topping()
+            {
+                Id = Guid.NewGuid(),
+                Name = "personagem",
+                Description = "",
+                Width = 140,
+                Height = 205,
+                X = 61,
+                Y = 22,
+                Tags = ImageTags.Any,
+                Layer = Layer.Background,
+                IsText = false,
+                Font = "Calibri",
+                Color = "Black",
+                TemplateId = Guid.Parse("fab466dd-3e09-4d66-8873-1d62a6840d88"),
                 Index = 1
             });
 
         modelBuilder.Entity<Source>().HasData(
             new Source()
             {
-                Name = "source test",
-                Description = "source test",
+                Name = "Ay que bestera",
+                Description = "Ayyy",
                 Tags = ImageTags.Any,
-                Width = 635,
-                Height = 635,
-                Path = @"C:\Users\Netty\Desktop\Repos\Steambird\src\Steambird.Server\Milkshake\source\source test.webp"
+                Width = 539,
+                Height = 417,
+                Path = @"C:\Users\Netty\Desktop\Repos\Steambird\src\Steambird.Server\Milkshake\source\ay que bestera.webp"
+            },
+            new Source()
+            {
+                Name = "Fiat Uno",
+                Description = "Uno vinho",
+                Tags = ImageTags.Any,
+                Width = 521,
+                Height = 588,
+                Path = @"C:\Users\Netty\Desktop\Repos\Steambird\src\Steambird.Server\Milkshake\source\Fiat Uno.webp"
+            },
+            new Source()
+            {
+                Name = "Internet Explorer",
+                Description = "Navegador",
+                Tags = ImageTags.Any,
+                Width = 128,
+                Height = 128,
+                Path = @"C:\Users\Netty\Desktop\Repos\Steambird\src\Steambird.Server\Milkshake\source\Internet Explorer.webp"
             });
     }
 }

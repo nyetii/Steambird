@@ -14,6 +14,8 @@ import TheWelcome from './components/TheWelcome.vue'
           <li><a href="/">Home</a></li>
           <li><a href="/milkshake">Milkshake.NET</a></li>
         </ul>
+
+        <a href="https://github.com/nyetii/" class="icon-anchor"><img class="icon" alt="GitHub" src="./assets/github.svg" width="32" height="31"/></a>
       </nav>
     </div>
   </header>
@@ -46,6 +48,13 @@ import TheWelcome from './components/TheWelcome.vue'
     height: auto;
     margin: 0 auto 2rem;
     cursor: pointer;
+  }
+
+  .icon-anchor,
+  .icon-anchor:hover {
+    border-radius: 50%;
+    width: 35px;
+    height: 34px;
   }
 
   @media (min-width: 1024px) {
