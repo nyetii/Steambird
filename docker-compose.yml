@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  steambird.server:
+    image: ${DOCKER_REGISTRY-}steambirdserver
+    ports:
+      - 80
+      - 443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=<password>
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    build:
+      context: .
+      dockerfile: src/Steambird.Server/Dockerfile
+      
+  steambird.client:
+    image: ${DOCKER_REGISTRY-}steambirdclient
+    build:
+      context: .
+      dockerfile: src/steambird.client/Dockerfile
+      args:
+        VUE_APP_API_URL: http://localhost:8080
+    ports:
+      - "8081:80"
+    depends_on:
+      - steambird.server

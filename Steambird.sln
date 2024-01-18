@@ -5,13 +5,15 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8E32E37B-79AA-4EBA-9D16-A9BCF20515A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steambird.Server", "src\Steambird.Server\Steambird.Server.csproj", "{329A6399-0DDA-4CD9-B341-A7C8C12E2557}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Steambird.Server", "src\Steambird.Server\Steambird.Server.csproj", "{329A6399-0DDA-4CD9-B341-A7C8C12E2557}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "steambird.client", "src\steambird.client\steambird.client.esproj", "{CD2D7CB4-339C-4D5B-892B-CF7D1157EC69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steambird.Logging", "src\Steambird.Logging\Steambird.Logging.csproj", "{0DF34FD4-1A0E-4C25-8202-207D66D2580C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Steambird.Logging", "src\Steambird.Logging\Steambird.Logging.csproj", "{0DF34FD4-1A0E-4C25-8202-207D66D2580C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steambird.ImageGeneration", "src\Steambird.ImageGeneration\Steambird.ImageGeneration.csproj", "{B1E5B7E5-462B-4DE4-9834-121BEB25B625}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Steambird.ImageGeneration", "src\Steambird.ImageGeneration\Steambird.ImageGeneration.csproj", "{B1E5B7E5-462B-4DE4-9834-121BEB25B625}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B95B33E9-3713-4278-88E1-091515513729}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{B1E5B7E5-462B-4DE4-9834-121BEB25B625}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1E5B7E5-462B-4DE4-9834-121BEB25B625}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1E5B7E5-462B-4DE4-9834-121BEB25B625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B95B33E9-3713-4278-88E1-091515513729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95B33E9-3713-4278-88E1-091515513729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95B33E9-3713-4278-88E1-091515513729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B95B33E9-3713-4278-88E1-091515513729}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
