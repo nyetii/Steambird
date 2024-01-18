@@ -5,9 +5,11 @@
         </div>
 
         <div v-if="post" class="content">
-            <div v-for="p in post" :key="p.id">
+            <div v-for="p in post" :key="p.id" class="post">
+                <span>{{ p.createdAt }}</span>
                 <h1>{{ p.title }}</h1>
-                <p>{{ p.createdAt }}</p>
+                
+                <p></p>
                 <p>{{ p.content }}</p>
             </div>        
         </div>
@@ -67,4 +69,13 @@
 </script>
 
 <style scoped>
+    .post{
+        background-color: #1f1f1f;
+        margin: 5%;
+        padding: 5%;
+    }
+
+    .post h1 {
+        text-align: center;
+    }
 </style>

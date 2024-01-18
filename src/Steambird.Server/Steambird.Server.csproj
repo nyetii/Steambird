@@ -29,11 +29,8 @@
     <ProjectReference Include="..\steambird.client\steambird.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\Steambird.ImageGeneration\Steambird.ImageGeneration.csproj" />
     <ProjectReference Include="..\Steambird.Logging\Steambird.Logging.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Dtos\" />
   </ItemGroup>
 
 </Project>

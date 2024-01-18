@@ -1,11 +1,13 @@
 
+using System.Reflection;
+using Milkshake.Configuration;
 using Serilog;
 using Steambird.Logging;
 using Steambird.Server.Extensions;
 
 namespace Steambird.Server
 {
-    internal static class Program
+    internal class Program
     {
         public static async Task Main(string[] args)
         {
@@ -23,11 +25,18 @@ namespace Steambird.Server
 
             builder.Services.ConfigureDatabase(builder.Configuration);
 
+            builder.Host.ConfigureMilkshake<Program>(x =>
+            {
+                x.AddCrud();
+                x.AddMilkshakeHandler();
+                x.AddOptions(options => options.MultipleInstances = false);
+            });
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            
             var app = builder.Build();
             
             app.RequestLogging();
