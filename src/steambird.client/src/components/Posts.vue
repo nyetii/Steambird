@@ -6,8 +6,8 @@
 
         <div v-if="post" class="content">
             <div v-for="p in post" :key="p.id" class="post">
-                <span>{{ p.createdAt }}</span>
-                <h1>{{ p.title }}</h1>
+                <span>{{ getDate(p.createdAt) }}</span>
+            <a :href="`${getShortDate(p.createdAt)}/${p.slug}`"><h1>{{ p.title }}</h1></a>
                 
                 <p></p>
                 <p>{{ p.content }}</p>
@@ -63,6 +63,34 @@
                         this.loading = false;
                         return;
                     });
+            },
+            getShortDate(created : string) {                
+                let date = new Date(created);
+                
+                function padTo2Digits(num: number) {
+                    return num.toString().padStart(2, '0');
+                }
+
+                return (
+                [
+                date.getFullYear(),
+                padTo2Digits(date.getMonth() + 1),
+                ].join('-'))
+            },
+            getDate(created : string) {                
+                let date = new Date(created);
+                
+                function padTo2Digits(num: number) {
+                    return num.toString().padStart(2, '0');
+                }
+
+                return (
+                [
+                padTo2Digits(date.getDate()),
+                padTo2Digits(date.getMonth() + 1),
+                date.getFullYear()
+                ].join('/') + ' ' +
+                [padTo2Digits(date.getHours()), padTo2Digits(date.getMinutes())].join(':'))
             }
         },
     });
@@ -73,9 +101,9 @@
         background-color: #1f1f1f;
         margin: 5%;
         padding: 5%;
+        border-radius: 4em;
     }
 
     .post h1 {
-        text-align: center;
     }
 </style>

@@ -6,34 +6,46 @@ import TheWelcome from './components/TheWelcome.vue'
 
 <template>
   <header>
-    <nav class="navbar">
-      <img alt="Logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <div>
+      <nav class="navbar">
+        <a href="/" class="logo"><img alt="Logo" class="logo" src="./assets/logo.svg" width="125" height="125" /></a>
 
-      <ul class="nav-list">
-        <li><a href="#">Home</a></li>
-        <li><a href="/memes">Gerar Memes</a></li>
-      </ul>
-    </nav>
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/milkshake">Milkshake.NET</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
     <RouterView></RouterView>
-    <p>Posts</p>
-    <PostsVue></PostsVue>
   </main>
 </template>
 
 <style scoped>
+  template {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    margin-top: 4em;
+  }
+
   header {
+    margin: 1em 0 2em 0;
     line-height: 1.5;
-    position: fixed;
+    position: absolute;
     top: 0;
   }
 
   .logo {
     display: block;
     width: 5em;
+    height: auto;
     margin: 0 auto 2rem;
+    cursor: pointer;
   }
 
   @media (min-width: 1024px) {
@@ -46,6 +58,10 @@ import TheWelcome from './components/TheWelcome.vue'
 
   .logo {
     margin: 0 2rem 0 0;
+  }
+
+  .logo:hover{
+    background-color:transparent;
   }
 
   header .wrapper {

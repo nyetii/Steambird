@@ -6,9 +6,10 @@
         </div>
 
         <div v-if="post" class="content">
-                <h1>Title is {{ post.title }}</h1>
-                <p>Date {{ post.createdAt }}</p>
-                <p>Content {{ post.content }}</p>
+            <span>{{ getDate(post.createdAt) }}</span>
+            <h1>{{ post.title }}</h1>
+                
+            <p>{{ post.content }}</p>
         </div>
     </div>
 </template>
@@ -94,7 +95,31 @@
                         this.loading = false;
                         return;
                     });*/
+            },
+            getDate(created : string) {                
+                let date = new Date(created);
+                
+                function padTo2Digits(num: number) {
+                    return num.toString().padStart(2, '0');
+                }
+
+                return (
+                [
+                padTo2Digits(date.getDate()),
+                padTo2Digits(date.getMonth() + 1),
+                date.getFullYear()
+                ].join('/') + ' ' +
+                [padTo2Digits(date.getHours()), padTo2Digits(date.getMinutes())].join(':'))
             }
         },
     });
 </script>
+
+<style scoped>
+    .content{
+        background-color: #1f1f1f;
+        margin: 5%;
+        padding: 5%;
+        border-radius: 4em;
+    }
+</style>

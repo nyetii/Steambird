@@ -34,7 +34,8 @@ public class Post
         }
     }
 
-    public DateTime CreatedAt => CreateTimestamp();
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    //public DateTime CreatedAt => CreateTimestamp();
 
     public DateTime? UpdatedAt { get; set; } = null;
 

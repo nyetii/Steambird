@@ -1,5 +1,6 @@
 ﻿using Steambird.Server.Models;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using Steambird.Server.Extensions;
 
 namespace Steambird.Server.Repositories;
@@ -19,5 +20,10 @@ public class PostRepository : Repository<Post>
         //    .Where(post => post.Slug == Slug)
         //    .ToList()
         //    .FirstOrDefault(post => post.CreatedAt.ToYearMonthString() == Date);
+    }
+
+    public override IAsyncEnumerable<Post> GetAsync()
+    {
+        return Set.OrderByDescending(x => x.CreatedAt).AsAsyncEnumerable();
     }
 }

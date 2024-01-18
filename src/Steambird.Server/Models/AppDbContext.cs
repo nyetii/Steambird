@@ -22,8 +22,9 @@ public class AppDbContext : DbContext
             new Post
             {
                 Id = 1,
-                Title = "This is a test post",
-                Slug = "test",
+                Title = "Lorem ipsum dolor sit amet",
+                Slug = "lorem-ipsum",
+                CreatedAt = new DateTime(2024, 01, 16, 23, 59, 0),
                 Content = """
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere porttitor enim, eget hendrerit massa auctor et. Etiam aliquet nulla tempor magna pulvinar dictum. Nam sodales purus consectetur, mollis metus in, dapibus ante. Praesent dignissim eu velit in vestibulum. Nulla ultrices consectetur nulla vel posuere. Fusce vestibulum faucibus nibh nec ullamcorper. Vestibulum imperdiet nisi nunc. Vestibulum id felis et turpis facilisis sagittis. Vivamus vestibulum nec elit ac imperdiet. Suspendisse eu congue lacus. Quisque elementum ante leo, non gravida mi luctus sed. Suspendisse potenti. Mauris quis diam vitae purus sodales consectetur.
                           
@@ -34,14 +35,11 @@ public class AppDbContext : DbContext
             }, new Post
             {
                 Id = 2,
-                Title = "Second post!",
-                Slug = "second-post",
+                Title = "Bem-vindo ao meu blog!",
+                Slug = "bem-vindo",
+                CreatedAt = new DateTime(2024, 01, 18, 7, 30, 0),
                 Content = """
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere porttitor enim, eget hendrerit massa auctor et. Etiam aliquet nulla tempor magna pulvinar dictum. Nam sodales purus consectetur, mollis metus in, dapibus ante. Praesent dignissim eu velit in vestibulum. Nulla ultrices consectetur nulla vel posuere. Fusce vestibulum faucibus nibh nec ullamcorper. Vestibulum imperdiet nisi nunc. Vestibulum id felis et turpis facilisis sagittis. Vivamus vestibulum nec elit ac imperdiet. Suspendisse eu congue lacus. Quisque elementum ante leo, non gravida mi luctus sed. Suspendisse potenti. Mauris quis diam vitae purus sodales consectetur.
-                          
-                          Vivamus placerat commodo nibh sed accumsan. Pellentesque sed sodales dolor. Donec at sem in diam posuere condimentum sit amet sit amet metus. In finibus egestas nibh. Nullam facilisis semper eleifend. Nam metus odio, faucibus ac mattis vitae, ornare sed tellus. Nam mattis rutrum leo non pellentesque. Nam et odio non sapien semper finibus et ac turpis. Sed euismod iaculis leo, ac ornare augue sodales a. Suspendisse potenti. Pellentesque a consequat sapien, sit amet luctus nibh.
-                          
-                          Maecenas finibus porttitor sapien, sit amet venenatis sem placerat quis. Cras at sagittis dui. Etiam tempor turpis vel tortor molestie, id egestas orci condimentum. Cras vitae venenatis urna. Nam id malesuada dui. Suspendisse condimentum scelerisque nibh, sit amet feugiat diam porta tristique. Nam ornare nibh felis, vitae varius nisl vulputate ac. Donec et quam eu nisi elementum ultricies. Etiam quis feugiat nisi, accumsan condimentum diam. Mauris sed sapien lacinia, sagittis enim at, sodales metus. Proin consequat magna ligula, sed vehicula eros aliquet eget. 
+                          Boas vindas ao meu blog! Eu planejo usar esta página como uma espécie de portfólio. Por ora só tem apenas uma pequena funcionalidade de blog e o gerador do Milkshake, porém planejo colocar mais projetos interessantes aqui.
                           """
             });
 
